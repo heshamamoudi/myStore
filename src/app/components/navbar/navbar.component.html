@@ -1,0 +1,13 @@
+<div class="navbar">
+    <div class="brand"><span>MyStore</span></div>
+    <div class="bars"></div>
+    <nav *ngIf="(auth.isAuthenticated$ | async) == true "  class="nav">
+
+        <ul class="links-list">
+            <li><a routerLink="/Account">Account</a></li>
+            <li><a routerLink="/Cart">Cart</a></li> 
+            <li><button class="btn" (click)="logoutWithRedirect()" >Log out</button></li> 
+        </ul>
+    </nav>
+    <app-login *ngIf="(auth.isAuthenticated$ | async) == false "></app-login>
+</div>

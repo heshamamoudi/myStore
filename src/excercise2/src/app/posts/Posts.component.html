@@ -1,0 +1,35 @@
+<!-- <h1>{{name}}</h1> -->
+
+<!-- <ul>
+   <li>{{ingrediants[0]}}</li>
+   <li>{{ingrediants[1]}}</li>
+   <li>{{ingrediants[2]}}</li>
+</ul>
+<h2>{{howToUse}}</h2> -->
+
+<!-- <ul *ngFor="let Posts of Postss" >
+<li>{{Posts.id}}</li>
+<li *ngIf=" Posts.title === 'water'">{{Posts.title}}</li>
+<label>ingrdiants:</label>
+<ul>
+    
+    <li *ngFor="let ingrediant of ingrediants">{{ingrediant}}</li>
+</ul>
+
+<li>{{Posts.howToUse}}</li>
+
+</ul> -->
+
+<!-- part 2 bypassing data from parent to child -->
+<h1>bypass data to a child component</h1>
+<div fxLayout="column" fxLayoutAlign="center">
+    
+<app-Posts-item fxFlexOffset="0%" *ngFor="let Post of posts" [Posts]="Post" (hidePosts)="hidePosts($event)" (marked)="markAsFavorite(Post)"></app-Posts-item>
+</div>
+<app-creat-post (addPost)="addPost($event)"></app-creat-post>
+
+<!-- <button (click)="add(Postss)">add Posts</button> -->
+<!-- <button (click)="remove(Postss)">remove Posts</button>
+<br/> -->
+
+

@@ -1,0 +1,21 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css']
+})
+export class ProductsComponent implements OnInit {
+ name:string;
+ price:number;
+ 
+  constructor() {
+    this.name='';
+    this.price=0;
+
+   }
+
+  ngOnInit(): void {
+  }
+
+}
