@@ -15,10 +15,11 @@ export class UsersService {
     username: '',
     password: ''
   };
+
   constructor(private http:HttpClient) { }
 
 
-  signup(user:User):Observable<any>{
+  signup(user:User):Observable<User>{
     
     return this.http.post<User>("http://localhost:5000/signup",user).pipe(
       retry(2),
@@ -40,5 +41,5 @@ export class UsersService {
     // Return an observable with a user-facing error message.
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
-  
+
 }

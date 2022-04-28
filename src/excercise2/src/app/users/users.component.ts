@@ -11,9 +11,9 @@ users: User[] = [];
   constructor(private userService:UsersService) { }
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe(res =>{
-      this.users = res;
-    })
+    // this.userService.getUsers().subscribe(res =>{
+    //   this.users = res;
+    // })
 
   }
 
