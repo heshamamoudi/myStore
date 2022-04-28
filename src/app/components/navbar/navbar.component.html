@@ -1,4 +1,4 @@
-<div class="navbar" *ngIf="!(logged$ | async) as logged">
+<div class="navbar" >
     <div class="brand"><span>MyStore</span>
     <ul class="links-list" >
         <li><a routerLink="">Home</a></li>
@@ -8,13 +8,15 @@
     <div class="bars"></div>
     
 
-    <nav  class="nav" *ngIf="logged ">
+    <nav  class="nav" *ngIf="(loginstatus$ | async) as status">
       
         <ul class="links-list" >
             <li><a routerLink="/Account">Account</a></li>
             <li><a routerLink="/Cart">Cart</a></li> 
-            <li><button class="btn"  (click)="logoutWithRedirect()" >Log out</button></li> 
+            <li><button class="btn"  (click)="logoutWithRedirect()" >{{status}}</button></li> 
         </ul>
     </nav>
-    <button class="btn " routerLink="signin" *ngIf="logged">{{logged}}</button>
+    <button class="btn " routerLink="signin" *ngIf="!(loginstatus$ | async)">Log in</button>
+    
+    
 </div>

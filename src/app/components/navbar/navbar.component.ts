@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from 'src/app/services/users/users.service';
+
 import { AuthService } from '../../services/auth/auth.service'
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
@@ -9,20 +9,21 @@ import { Observable } from 'rxjs/internal/Observable';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-logged$:Observable<boolean>;
-  constructor(private auth:AuthService, private user:UsersService, private router:Router) { 
-    this.logged$= this.auth.logged()
+  loginstatus$?:Observable<boolean>;
+  constructor(private auth:AuthService,private router:Router) { 
+    
   }
 
   ngOnInit(): void {
-    // this.logged$= this.auth.logged();
-   
+   this.loginstatus$ = this.auth.loginstatus;
   }
  
 
   logoutWithRedirect():void{
     this.auth.logout();
-    this.router.navigate(['signin']);
+  }
+  isLoggedIn(){
+  return  this.auth.isLoggedIn()
   }
   
 

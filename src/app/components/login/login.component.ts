@@ -18,11 +18,8 @@ password:string=''
   
 
   loginWithRedirect():void{
-    this.auth.login(this.username,this.password).subscribe(()=>{
-      
-      alert("user logged in")
-      this.router.navigateByUrl('/')
-      
+    this.auth.login(this.username,this.password).subscribe((data)=>{
+     this.auth.setSession(data)
     })
   }
 

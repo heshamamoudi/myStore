@@ -8,7 +8,8 @@ import { AuthService } from './services/auth/auth.service';
 })
 export class AppComponent {
   title = 'myStore';
+  // load:boolean=false;
   constructor(public auth:AuthService){
-
+    // this.auth.logged().subscribe(res => this.load=res)
   }
 }
