@@ -14,6 +14,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoadingComponent } from './loading/loading.component';
 import { TokenIntInterceptor } from './interceptors/token-int.interceptor';
 import { SignupComponent } from './components/signup/signup.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { SignupComponent } from './components/signup/signup.component';
     NavbarComponent,
     LoadingComponent,
     SignupComponent,
+    ShopComponent,
+    ProductComponent,
 
   ],
   imports: [

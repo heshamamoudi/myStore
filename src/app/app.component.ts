@@ -12,4 +12,5 @@ export class AppComponent {
   constructor(public auth:AuthService){
     // this.auth.logged().subscribe(res => this.load=res)
   }
+ 
 }

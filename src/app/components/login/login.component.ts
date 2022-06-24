@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router } from '@angular/router';
 @Component({
@@ -10,7 +10,6 @@ export class LoginComponent implements OnInit {
 username:string=''
 password:string=''
   constructor(private auth:AuthService, private router: Router) { }
-
   ngOnInit(): void {
    
   }
@@ -19,9 +18,12 @@ password:string=''
 
   loginWithRedirect():void{
     this.auth.login(this.username,this.password).subscribe((data)=>{
-     this.auth.setSession(data)
+      this.auth.setSession(data)
+      
     })
   }
+
+  
 
   signup(){
     this.router.navigateByUrl('/signup')

@@ -24,6 +24,10 @@ export class SignupComponent implements OnInit {
       last_name:this.last_name,
       username:this.username,
       password:this.password
-    })
+    }).subscribe((data)=>{
+      this.auth.setSession(data)
+      alert(data)
+     })
+   
   }
 }
